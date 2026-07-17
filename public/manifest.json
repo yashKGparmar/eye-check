@@ -1,0 +1,17 @@
+{
+  "name": "VisionCheck AI",
+  "short_name": "VisionCheck",
+  "description": "Quick educational vision screening from your device.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

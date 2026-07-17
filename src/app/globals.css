@@ -1,26 +1,118 @@
 @import "tailwindcss";
+@import "tailwindcss/utilities";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #2563EB;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-active: #1e40af;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+
+  /* Fonts */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Add border radii */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: #FFFFFF;
+  --foreground: #111827;
+  --text-secondary: #6B7280;
+  --card-bg: #FFFFFF;
+  --card-border: #E5E7EB;
+  --input-bg: #F9FAFB;
+  --input-border: #D1D5DB;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #09090B;
+    --foreground: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --card-bg: #18181B;
+    --card-border: #27272A;
+    --input-bg: #18181B;
+    --input-border: #3F3F46;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilities for Apple-like design */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .glass {
+      background: rgba(9, 9, 11, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ── Accessibility: High Contrast ── */
+[data-high-contrast="true"] {
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --text-secondary: #E5E7EB;
+  --card-bg: #111111;
+  --card-border: #FFFFFF;
+  --input-bg: #111111;
+  --input-border: #FFFFFF;
+  --color-primary: #60A5FA;
+  --color-primary-hover: #93C5FD;
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+}
+
+/* ── Accessibility: Large Text ── */
+[data-large-text="true"] {
+  font-size: 1.2rem;
+}
+[data-large-text="true"] h1 { font-size: 2.75rem; }
+[data-large-text="true"] h2 { font-size: 2rem; }
+[data-large-text="true"] h3 { font-size: 1.5rem; }
+[data-large-text="true"] p  { font-size: 1.15rem; }
+[data-large-text="true"] button { min-height: 60px; font-size: 1.1rem; }
+
+/* ── Accessibility: Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+[data-reduced-motion="true"] *,
+[data-reduced-motion="true"] *::before,
+[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ── Focus indicators ── */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }

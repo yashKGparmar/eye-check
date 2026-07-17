@@ -1,0 +1,35 @@
+{
+  "home": {
+    "title": "Know if your vision needs attention in just 3 minutes.",
+    "subtitle": "Free, interactive vision screening from your device. No signup required.",
+    "start_quick": "Quick Test (3 min)",
+    "start_full": "Full Assessment (8 min)",
+    "resume": "Resume Test",
+    "how_it_works": "How it Works",
+    "child_mode": "Child Mode",
+    "child_mode_desc": "Fun shapes & animals for kids."
+  },
+  "common": {
+    "next": "Next",
+    "back": "Back",
+    "finish": "Finish",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "exit": "Exit",
+    "loading": "Loading..."
+  },
+  "results": {
+    "title": "Your Vision Report",
+    "overall": "Vision Score",
+    "acuity": "Estimated Acuity",
+    "recommendation": "Doctor Recommendation",
+    "insights": "Screening Insights",
+    "tips": "Eye Health Habits",
+    "retake": "Retake Test",
+    "download": "Download Report",
+    "share": "Share Result",
+    "emergency_alert": "Urgent Care Recommended",
+    "emergency_desc": "Based on your symptoms (e.g. sudden vision loss, pain, flashes), we highly recommend seeking immediate medical attention from an eye care professional or emergency room."
+  }
+}
